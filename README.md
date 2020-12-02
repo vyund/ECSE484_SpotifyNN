@@ -17,13 +17,16 @@ As an extension to this project, I also repeated my experiment using Spotify pla
 
 ### Usage:
 #### _data_genre.py_
-Extracts song features from pre-determined Spotify playlists using Spotify’s API. Features per song are strung out horizontally and stored as a row in the resulting CSV file. Samples are encoded with numeric values, which correspond to the genre of the song. Samples also include the track ID (*tid*), which can be used to identify the song and retrieve other relevant song information if needed. Note that songs are added in a manner such that genres are all grouped together. During training/testing, these samples are shuffled.
+Extracts 11 song features from pre-determined Spotify playlists using Spotify’s API. Features per song are strung out horizontally and stored as a row in the resulting CSV file. Samples are encoded with numeric values, which correspond to the genre of the song. Samples also include the track ID (*tid*), which can be used to identify the song and retrieve other relevant song information if needed. Note that songs are added in a manner such that genres are all grouped together. During training/testing, these samples are shuffled.
 
 #### _data_mood.py_
 Performs functionality of *data_genre.py*, but for Spotify’s “mood” playlists.
 
 #### _model.py_
 Loads specified CSV file into a Pandas Dataframe. Then, splits into training and test sets and passed through TensorFlow model. Model architecture was found experimentally to yield best performance per class size experiment. Hyperparameters that were used in experiments are provided by default.  
+
+### Model Architecture:
+![Model Architecture](/model_diagram.png)
 
 ### Results:
 #### 3-class Genre Experiment
