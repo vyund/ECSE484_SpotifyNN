@@ -45,3 +45,6 @@ Loads specified CSV file into a Pandas Dataframe. Then, splits into training and
 * 71.37% test accuracy
 
 ![4-Mood Model Confusion Matrix](/plots/model_cm_4moods.png)
+
+### Discussion:
+Results are promising, and show that it is possible for a neural network to be able to classify song genre based on its attribute. While the test accuracy for the experiments are relatively low, the confusion matrices show that errors in classification are related to the intrinsic similarities of certain genres of music. For example, the similar properties of indie, country, or rock music. Further experiments will be done to attempt to increase performance, but given the current dataset size, I did not want to overfit the model.
