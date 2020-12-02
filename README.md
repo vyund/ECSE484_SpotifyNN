@@ -8,11 +8,17 @@ As an extension to this project, I also repeated my experiment using Spotify pla
 
 ### Requirements:
 numpy 1.18.5
+
 matplotlib 3.1.3
+
 pandas 1.1.4
+
 seaborn 0.9.0
+
 scikit-learn 0.21.3
+
 tensorflow 2.3.1
+
 spotipy 2.16.1
 
 ### Usage:
