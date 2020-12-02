@@ -83,7 +83,7 @@ if __name__ == '__main__':
     hdr.insert(0, 'tid')
     hdr.append('label')
 
-    with open('./data/data_mood.csv', 'w', newline='') as csv_file:
+    with open('./data/data_4mood.csv', 'w', newline='') as csv_file:
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(hdr)
         csv_writer.writerows(study_data)

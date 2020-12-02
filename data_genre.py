@@ -114,7 +114,7 @@ if __name__ == '__main__':
     hdr.insert(0, 'tid')
     hdr.append('label')
 
-    with open('./data/data_5genres.csv', 'w', newline='') as csv_file:
+    with open('./data/data_5genre.csv', 'w', newline='') as csv_file:
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(hdr)
         csv_writer.writerows(jazz_data)
