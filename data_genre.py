@@ -5,6 +5,7 @@ import csv
 from secret import client_id, client_secret
 
 # Spotify API Object
+# Note: Requires Client ID and Client Secret which is found from registering an app through Spotify's API
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
@@ -70,18 +71,22 @@ trance_mission = 'spotify:playlist:37i9dQZF1DX91oIci4su1D'
 
 edm_playlists = [mint, dance_rising, dance_hits, trance_mission]
 
+# Get specified song features for all songs in a given playlist
 def get_playlist_data(playlists, feature_list, label):
     data = []
 
     for playlist in playlists:
+        # get track ID and track name from playlist
         tracks = sp.playlist_items(playlist, fields='items.track.id, items.track.name')
 
         for track in tracks['items']:
             if track['track'] != None:
                 track_id = track['track']['id']
+                # don't add duplicate songs
                 if track_id not in (s[0] for s in data):
                     features = sp.audio_features(track_id)[0]
                     if features != None:
+                        # extract specified features from Spotify track
                         sample = [features[ft] for ft in feature_list]
                         sample.insert(0, track_id)
                         sample.append(label)
