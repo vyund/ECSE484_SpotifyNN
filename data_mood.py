@@ -5,6 +5,7 @@ import csv
 from secret import client_id, client_secret
 
 # Spotify API Object
+# Note: Requires Client ID and Client Secret which is found from registering an app through Spotify's API
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
