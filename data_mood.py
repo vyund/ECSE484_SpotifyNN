@@ -46,17 +46,21 @@ mint = 'spotify:playlist:37i9dQZF1DX4dyzvuaRJ0n'
 
 party_playlists = [dance_rising, dance_party, floor_fillers, mint]
 
+# Get specified song features for all songs in a given playlist
 def get_playlist_data(playlists, feature_list, label):
     data = []
 
     for playlist in playlists:
+        # get track ID and track name from playlist
         tracks = sp.playlist_items(playlist, fields='items.track.id, items.track.name')
 
         for track in tracks['items']:
             if track['track'] != None:
                 track_id = track['track']['id']
+                # don't add duplicate songs
                 if track_id not in (s[0] for s in data):
                     features = sp.audio_features(track_id)[0]
+                    # extract specified features from Spotify track
                     sample = [features[ft] for ft in feature_list]
                     sample.insert(0, track_id)
                     sample.append(label)
