@@ -1,4 +1,4 @@
-# ECSE484_SpotifyNN
+# SpotifyNN
 ## Classifying Spotify song genres through use of neural networks.
 
 ### Background:
